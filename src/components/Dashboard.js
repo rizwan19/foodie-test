@@ -21,16 +21,18 @@ const Dashboard=()=>{
     // }
     let [flag,setflag]= useState("false");
     const [data, setData] = useState();
+    const [item, setItem] = useState("");
     const handleSubmit = (event)=>{
         event.preventDefault();
         //console.log(data);
         setflag(true);
+        setItem(data);
     }
     const handleChange=(event)=>{
         //console.log(event.target.value);
         setData(event.target.value);
         //setflag("true");
-        setflag(false);
+        //setflag(false);
     }
     
     return(<div>
@@ -42,7 +44,7 @@ const Dashboard=()=>{
                         <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Search Your Desired Recipe" onChange={handleChange}/>
                     </div>
                 </form>
-                {flag===true?<Food data={data}/>:""}
+                {flag===true?<Food data={item}/>:""}
             </section>
         </div>
     </div>

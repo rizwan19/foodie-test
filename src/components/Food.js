@@ -22,7 +22,10 @@ const Food = (props)=>{
         if(foodList.meals!==null)
         {
             return(
-                <div>
+                <div className="mt-5">
+                    <div>
+                        <h3>Search Result:</h3><br></br>
+                    </div>
                     <div style={{display:'grid', gridTemplateColumns:"auto auto"}}>
                         {foodList.meals.map((food, i)=>{
                             return(<FoodCard data={food} key={i}/>)
